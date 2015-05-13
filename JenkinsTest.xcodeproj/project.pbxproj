@@ -168,6 +168,7 @@
 				TargetAttributes = {
 					4C3F2B011B00D5A3003DCF92 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = E7RZZHFLBB;
 					};
 					4C3F2B1A1B00D5A3003DCF92 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -323,7 +324,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -416,6 +417,7 @@
 				4C3F2B271B00D5A3003DCF92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C3F2B281B00D5A3003DCF92 /* Build configuration list for PBXNativeTarget "JenkinsTestTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +426,7 @@
 				4C3F2B2A1B00D5A3003DCF92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
