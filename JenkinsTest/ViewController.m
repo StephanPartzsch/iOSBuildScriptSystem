@@ -39,4 +39,9 @@
     return num + num;
 }
 
+- (void)noCall:(int)num {
+    int result = 0;
+    num * num;
+}
+
 @end
