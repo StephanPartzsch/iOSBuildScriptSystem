@@ -32,11 +32,15 @@
 
 
 - (int)doOneThing:(int)number {
-    return number + number;
+    int result = 20;
+    result = number * 5 / (number * 0.5);
+    return result + number;
 }
 
-- (int)doTheSameThingAgain:(int)num {
-    return num + num;
+- (int)doTheSameThingAgain:(int)number {
+    int result = 20;
+    result = number * 5 / (number * 0.5);
+    return result + number;
 }
 
 - (void)noCall:(int)num {
