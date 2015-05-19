@@ -18,6 +18,13 @@ def retrieve_json
 end 
 
 def create_changelog (json_data)
+  
+  puts '************************************'
+  puts json_data
+  puts "-------------------------------------'
+  print json_data
+  puts '*************************************'
+
   comments = []
   length = 0 
   json_data['changeSet'].each do |key,value| 
