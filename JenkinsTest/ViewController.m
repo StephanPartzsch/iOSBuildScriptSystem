@@ -33,13 +33,19 @@
     
     UIColor *color = [UIColor blueColor];
     
-#ifdef COLOR_RED
+#if COLOR_RED
     color = [UIColor redColor];
 #endif
     
     CGRect rectangleFrame = CGRectMake((self.view.bounds.size.width-150)/2, (self.view.bounds.size.height-150)/2, 150, 150);
     UIView *rectangle = [[UIView alloc] initWithFrame:rectangleFrame];
     rectangle.backgroundColor = color;
+    
+#if OUTLINE
+    rectangle.layer.borderColor = [UIColor grayColor].CGColor;
+    rectangle.layer.borderWidth = 3.0f;
+#endif
+    
     [self.view addSubview:rectangle];
 }
 
