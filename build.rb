@@ -1,17 +1,16 @@
 #!/usr/bin/ruby
 
-PROJECT_NAME = `echo ${PROJECT_NAME}`
+project_name = `echo "$PROJECT_NAME"`
+project_name = project_name.strip
 
-unless defined? PROJECT_NAME
-	PROJECT_NAME = 'HUND'
+if project_name.empty?
+	project_name = 'HUND'
 end
 
 
-print ' ---------------- '
+puts ' ---------------- '
 
-print PROJECT_NAME
+puts project_name.length
+puts project_name
 
-print ' ---------------- '
-
-
-exec 'echo "~Parameter: ${JOB_NAME}"'
+puts ' ---------------- '
