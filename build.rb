@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-PROJECT_NAME2 = `echo ${PROJECT_NAME}`
+PROJECT_NAME = `echo ${PROJECT_NAME}`
 
 unless defined? PROJECT_NAME
 	PROJECT_NAME = 'HUND'
