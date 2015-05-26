@@ -20,8 +20,7 @@
     
     [self doOneThing:5];
     [self doTheSameThingAgain:3];
-    
-    // Do any additional setup after loading the view, typically from a nib.
+    [self drawColoredRectangle];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,6 +29,25 @@
     NSLog(@"...and one more here as well.");
 }
 
+- (void)drawColoredRectangle {
+    
+    UIColor *color = [UIColor blueColor];
+    
+#if COLOR_RED
+    color = [UIColor redColor];
+#endif
+    
+    CGRect rectangleFrame = CGRectMake((self.view.bounds.size.width-150)/2, (self.view.bounds.size.height-150)/2, 150, 150);
+    UIView *rectangle = [[UIView alloc] initWithFrame:rectangleFrame];
+    rectangle.backgroundColor = color;
+    
+#if OUTLINE
+    rectangle.layer.borderColor = [UIColor grayColor].CGColor;
+    rectangle.layer.borderWidth = 3.0f;
+#endif
+    
+    [self.view addSubview:rectangle];
+}
 
 - (int)doOneThing:(int)number {
     int result = 20;
