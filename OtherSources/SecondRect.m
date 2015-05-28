@@ -23,7 +23,14 @@
 
 - (CGRect)getFrame
 {
+   int number = 3;
    return CGRectMake(0, 0, 100, 100);
+}
+
+- (CGRect)getFrame3
+{
+    int number = 3;
+    return CGRectMake(0, 0, 100, 100);
 }
 
 /*

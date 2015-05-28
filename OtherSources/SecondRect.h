@@ -10,4 +10,6 @@
 
 @interface SecondRect : UIView
 
+- (CGRect)getFrame3;
+
 @end
