@@ -1,0 +1,21 @@
+<?xml version="1.0"?><results>
+<header>
+  <cloc_url>http://cloc.sourceforge.net</cloc_url>
+  <cloc_version>1.62</cloc_version>
+  <elapsed_seconds>0.0408079624176025</elapsed_seconds>
+  <n_files>6</n_files>
+  <n_lines>203</n_lines>
+  <files_per_second>147.03012952717</files_per_second>
+  <lines_per_second>4974.51938233593</lines_per_second>
+  <report_file>/Users/jenkins/.jenkins/jobs/JenkinsTestJob/workspace/test-reports/line-count.xml</report_file>
+</header>
+<files>
+  <file name="JenkinsTest/ViewController.m" blank="17" comment="8" code="47"  language="Objective C" />
+  <file name="JenkinsTest/Images.xcassets/AppIcon.appiconset/Contents.json" blank="0" comment="0" code="38"  language="JSON" />
+  <file name="JenkinsTest/AppDelegate.m" blank="12" comment="15" code="18"  language="Objective C" />
+  <file name="JenkinsTest/main.m" blank="2" comment="7" code="7"  language="Objective C" />
+  <file name="JenkinsTest/AppDelegate.h" blank="6" comment="7" code="4"  language="C/C++ Header" />
+  <file name="JenkinsTest/ViewController.h" blank="5" comment="7" code="3"  language="C/C++ Header" />
+  <total blank="42" comment="44" code="117" />
+</files>
+</results>
