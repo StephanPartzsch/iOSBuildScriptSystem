@@ -15,6 +15,7 @@
 		4C3F2B131B00D5A3003DCF92 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C3F2B121B00D5A3003DCF92 /* Images.xcassets */; };
 		4C3F2B161B00D5A3003DCF92 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C3F2B141B00D5A3003DCF92 /* LaunchScreen.xib */; };
 		4C3F2B221B00D5A3003DCF92 /* JenkinsTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F2B211B00D5A3003DCF92 /* JenkinsTestTests.m */; };
+		4C46572A1B175EC200A60DE7 /* SecondRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4657291B175EC200A60DE7 /* SecondRect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		4C3F2B1B1B00D5A3003DCF92 /* JenkinsTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JenkinsTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3F2B201B00D5A3003DCF92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C3F2B211B00D5A3003DCF92 /* JenkinsTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JenkinsTestTests.m; sourceTree = "<group>"; };
+		4C4657281B175EC200A60DE7 /* SecondRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondRect.h; path = OtherSources/SecondRect.h; sourceTree = SOURCE_ROOT; };
+		4C4657291B175EC200A60DE7 /* SecondRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondRect.m; path = OtherSources/SecondRect.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				4C3F2B121B00D5A3003DCF92 /* Images.xcassets */,
 				4C3F2B141B00D5A3003DCF92 /* LaunchScreen.xib */,
 				4C3F2B051B00D5A3003DCF92 /* Supporting Files */,
+				4C4657281B175EC200A60DE7 /* SecondRect.h */,
+				4C4657291B175EC200A60DE7 /* SecondRect.m */,
 			);
 			path = JenkinsTest;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			files = (
 				4C2F244B1B0636BF00D05F56 /* XCTestCase+GCovFlush.m in Sources */,
 				4C3F2B0E1B00D5A3003DCF92 /* ViewController.m in Sources */,
+				4C46572A1B175EC200A60DE7 /* SecondRect.m in Sources */,
 				4C3F2B0B1B00D5A3003DCF92 /* AppDelegate.m in Sources */,
 				4C3F2B081B00D5A3003DCF92 /* main.m in Sources */,
 			);

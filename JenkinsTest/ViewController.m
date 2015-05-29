@@ -7,10 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "SecondRect.h"
 
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
 
@@ -21,6 +19,7 @@
     [self doOneThing:5];
     [self doTheSameThingAgain:3];
     [self drawColoredRectangle];
+    [self addSecondRectangle];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +46,10 @@
 #endif
     
     [self.view addSubview:rectangle];
+}
+
+- (void)addSecondRectangle {
+    [self.view addSubview:[SecondRect new]];
 }
 
 - (int)doOneThing:(int)number {
