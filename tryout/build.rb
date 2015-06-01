@@ -1,11 +1,7 @@
 #!/usr/bin/ruby
 
-project_name = `echo "$PROJECT_NAME"`
-project_name = project_name.strip
-
-if project_name.empty?
-	project_name = 'HUND'
-end
+project_name = `echo "$PROJECT_NAME"`.strip
+if project_name.empty?; project_name = 'HUND' end
 
 
 puts ' ---------------- '
