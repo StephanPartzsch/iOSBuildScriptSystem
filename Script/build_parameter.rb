@@ -6,9 +6,12 @@
 
 
 @workspace = '/Users/jenkins/.jenkins/jobs/JenkinsTestJob/workspace'
-@build_directory_path = '/Users/jenkins/.jenkins/jobs/JenkinsTestJob/workspace/build'
+@build_directory_path = @workspace + '/build'
+@reports_directory_path = @workspace + '/reports'
 
 @project_name = 'JenkinsTest'
 @scheme = 'JenkinsTest'
 @configuration = 'Release'
 @app_name = 'JenkinsTest77'
+
+@source_directories = 'JenkinsTest' # Separated by single space" "

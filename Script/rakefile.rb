@@ -7,6 +7,9 @@ load 'build/build_app.rb'
 load 'build/sign_app.rb'
 load 'build/distribute_app.rb'
 
+load 'metrics/count_lines.rb'
+
+
 
 task :default do
 	system "rake --tasks"
@@ -47,7 +50,7 @@ namespace :build do
 	
 	desc "Runs the whole build prozess (setup|clean|test|build|sign|distribute)"
 	task :ALL => [:setup_parameters, :setup_metadata, :test, :build, :sign, :distribute] do
-		puts "\n\n✅  Everything done."
+		puts "\n\n✅  Everything done!"
 		puts "==================================="
 		puts ""
 	end
@@ -60,19 +63,15 @@ namespace :analyze do
 
 	desc "Count the lines of code"
 	task :loc do
-#		if true
-#			puts "Calling test2 task."
-#			Rake::Task["main:test2"].invoke #invokes main:test2
-#		else
-#			abort()
-#		end
-		puts "🔵  Counting lines of code ..."
+		count_lines
 	end
 	
 	
 	desc "Runs all the code metrics (loc)"
 	task :ALL => [:loc] do
-		puts "\n\n✅  Everything analyzed."
+		puts "\n\n✅  Everything analyzed!"
+		puts "==================================="
+		puts ""
 	end
 end
 
@@ -91,17 +90,16 @@ def setup_parameters
 	puts "-----------------------------------"
 	
 	# Print current Xcode verion
-	puts "🔹  Xcode version \t" + `xcodebuild -version`
-	puts "🔹  Xcode path \t\t" + `xcode-select -print-path`
-	puts ""
+	puts "🔹  Xcode version \t\t" + `xcodebuild -version`.gsub("\n", "  ")
+	puts "🔹  Xcode path \t\t\t" + `xcode-select -print-path`
+	puts "---"
 	
 	# Print build parameter
 	puts "➔  Overwrite the following parameters in Jenkins build job. Use the parameter name in [brackets]"
 	puts "---"
 	
-	workspace = `echo "$WORKSPACE"`.strip
-	if !workspace.empty?; @workspace = workspace end
-	puts "🔹  Workspace \t\t" + @workspace
+	puts "🔹  Workspace \t\t\t" + @workspace
+	puts "🔹  Reports directory path \t" + @reports_directory_path
 	
 	build_directory_path = `echo "$BUILD_DIRECTORY_PATH"`.strip
 	if !build_directory_path.empty?; @build_directory_path = build_directory_path end
@@ -109,11 +107,11 @@ def setup_parameters
 	
 	project_name = `echo "$PROJECT_NAME"`.strip
 	if !project_name.empty?; @project_name = project_name end
-	puts "🔸  [PROJECT_NAME] \t" + @project_name + ""
+	puts "🔸  [PROJECT_NAME] \t\t" + @project_name + ""
 	
 	scheme = `echo "$SCHEME"`.strip
 	if !scheme.empty?; @scheme = scheme end
-	puts "🔸  [SCHEME] \t\t" + @scheme + ""
+	puts "🔸  [SCHEME] \t\t\t" + @scheme + ""
 	
 	configuration = `echo "$CONFIGURATION"`.strip
 	if !configuration.empty?; @configuration = configuration end
@@ -121,7 +119,7 @@ def setup_parameters
 	
 	app_name = `echo "$APP_NAME"`.strip
 	if !app_name.empty?; @app_name = app_name end
-	puts "🔸  [APP_NAME] \t\t" + @app_name + ""
+	puts "🔸  [APP_NAME] \t\t\t" + @app_name + ""
 end
 
 
