@@ -4,8 +4,9 @@
 # This file contains all standard build parameters.
 ##
 
-@build_directory = 'build'
+
 @workspace = '/Users/jenkins/.jenkins/jobs/JenkinsTestJob/workspace'
+@build_directory_path = '/Users/jenkins/.jenkins/jobs/JenkinsTestJob/workspace/build'
 
 @project_name = 'JenkinsTest'
 @scheme = 'JenkinsTest'

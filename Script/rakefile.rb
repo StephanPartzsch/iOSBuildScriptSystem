@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 load 'build_parameter.rb'
+
 load 'build/test_app.rb'
 load 'build/build_app.rb'
 load 'build/sign_app.rb'
@@ -45,8 +46,9 @@ namespace :build do
 	end
 	
 	desc "Runs the whole build prozess (setup|clean|test|build|sign|distribute)"
-	task :ALL => [:setup, :clean, :test, :build, :sign, :distribute] do
-		puts "✅  Everything done."
+	task :ALL => [:setup_parameters, :setup_metadata, :test, :build, :sign, :distribute] do
+		puts "\n\n✅  Everything done."
+		puts "==================================="
 		puts ""
 	end
 	
@@ -101,9 +103,9 @@ def setup_parameters
 	if !workspace.empty?; @workspace = workspace end
 	puts "🔹  Workspace \t\t" + @workspace
 	
-	build_directory = `echo "$BUILD_DIRECTORY"`.strip
-	if !build_directory.empty?; @build_directory = build_directory end
-	puts "🔸  [BUILD_DIRECTORY] \t" + @build_directory + ""
+	build_directory_path = `echo "$BUILD_DIRECTORY_PATH"`.strip
+	if !build_directory_path.empty?; @build_directory_path = build_directory_path end
+	puts "🔸  [BUILD_DIRECTORY_PATH] \t" + @build_directory_path+ ""
 	
 	project_name = `echo "$PROJECT_NAME"`.strip
 	if !project_name.empty?; @project_name = project_name end
