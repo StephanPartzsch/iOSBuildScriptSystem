@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 
 def build_app
-	puts "BUILDING..."
+	puts "\n\n🔵  Building app ..."
+	puts "-----------------------------------"
 end

@@ -14,14 +14,9 @@ end
 
 namespace :build do
 	
-	desc "Prepare neccessary build parameter (set/overwrite)"
-	task :prepare_build do
-		prepare_build_parameter
-	end
-	
-	desc "Logs all relevant build parameter and settings"
-	task :log do
-		log_build_info
+	desc "Prepare and log neccessary build parameters and settings (set/overwrite)"
+	task :setup do
+		setup
 	end
 	
 	desc "Cleans the build directory"
@@ -36,23 +31,23 @@ namespace :build do
 	
 	desc "Builds the application"
 	task :build do
-		puts ">>> Building app ..."
-				build_app
+		build_app
 	end
 
-	desc "CSigns the application" 
+	desc "Signs the application" 
 	task :sign do
-		puts ">>> Signing app ..."
+		sign_app
 	end
 	
 	desc "Distributes the app to Tankstelle and S3 server"	
 	task :distribute do
-		puts ">>> Distributing app ..."
+		distribute_app
 	end
 	
-	desc "Runs the whole build prozess (test|build|sign|distribute)"
-	task :ALL => [:prepare_build, :log, :clean, :test, :build, :sign, :distribute] do
-		puts ">>> Everything done."
+	desc "Runs the whole build prozess (setup|clean|test|build|sign|distribute)"
+	task :ALL => [:setup, :clean, :test, :build, :sign, :distribute] do
+		puts "✅  Everything done."
+		puts ""
 	end
 	
 end
@@ -69,13 +64,13 @@ namespace :analyze do
 #		else
 #			abort()
 #		end
-		puts ">>> Counting lines of code..."
+		puts "🔵  Counting lines of code..."
 	end
 	
 	
 	desc "Runs all the code metrics (loc)"
 	task :ALL => [:loc] do
-		puts ">>> Everything analyzed."
+		puts "\n\n✅  Everything analyzed."
 	end
 end
 
@@ -89,48 +84,40 @@ end
 
 
 
-
-def prepare_build_parameter
-	puts "\n\n>>> Setting build parameter..."
-	puts "-----------------------------------"
-	puts "Overwrite the following parameter in Jenkins build job..."
-
-	workspace = `echo "$WORKSPACE"`.strip
-	if !workspace.empty?; @workspace = workspace end
-	
-	puts "- BUILD_DIRECTORY"
-	build_directory = `echo "$BUILD_DIRECTORY"`.strip
-	if !build_directory.empty?; @build_directory = build_directory end
-
-	puts "- PROJECT_NAME"
-	project_name = `echo "$PROJECT_NAME"`.strip
-	if !project_name.empty?; @project_name = project_name end
-
-	puts "- SCHEME"
-	scheme = `echo "$SCHEME"`.strip
-	if !scheme.empty?; @scheme = scheme end
-end
-
-
-def log_build_info
-	puts "\n\n>>> Build parameter and settings..."
+def setup
+	puts "\n\n🔵  Build parameters and settings..."
 	puts "-----------------------------------"
 	
 	# Print current Xcode verion
-	puts "Xcode version: " + `xcodebuild -version`
-	puts "Xcode path: " + `xcode-select -print-path`
+	puts "🔹  Xcode version \t" + `xcodebuild -version`
+	puts "🔹  Xcode path \t\t" + `xcode-select -print-path`
 	puts ""
 	
 	# Print build parameter
-	puts "Workspace: " + @workspace
-	puts "Build directory: " + @build_directory
-	puts "Project name: " + @project_name
-	puts "Scheme: " + @scheme
+	puts "➔  Overwrite the following parameters in Jenkins build job. Use the parameter name in [brackets]"
+	puts "---"
+	
+	workspace = `echo "$WORKSPACE"`.strip
+	if !workspace.empty?; @workspace = workspace end
+	puts "🔹  Workspace \t\t" + @workspace
+	
+	build_directory = `echo "$BUILD_DIRECTORY"`.strip
+	if !build_directory.empty?; @build_directory = build_directory end
+	puts "🔸  [BUILD_DIRECTORY] \t" + @build_directory + ""
+	
+	project_name = `echo "$PROJECT_NAME"`.strip
+	if !project_name.empty?; @project_name = project_name end
+	puts "🔸  [PROJECT_NAME] \t" + @project_name + ""
+	
+	scheme = `echo "$SCHEME"`.strip
+	if !scheme.empty?; @scheme = scheme end
+	puts "🔸  [SCHEME] \t\t" + @scheme + ""
 end
 
 
+
 def clean_build_directory
-	puts "\n\n>>> Cleaning build directory..."
+	puts "\n\n🔵  Cleaning build directory..."
 	puts "-----------------------------------"
 	
 	# Clean build directory
