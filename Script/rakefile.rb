@@ -14,14 +14,14 @@ end
 
 namespace :build do
 	
-	desc "Prepare and log neccessary build parameters and settings (set/overwrite)"
-	task :setup do
-		setup
+	desc "Prepares and logs neccessary build parameters (set/overwrite)"
+	task :setup_parameters do
+		setup_parameters
 	end
 	
-	desc "Cleans the build directory"
-	task :clean do
-		clean_build_directory
+	desc "Sets up relevant metadata in plist files"
+	task :setup_metadata do
+		setup_metadata
 	end
 	
 	desc "Runs all tests of the defined project's scheme"
@@ -64,7 +64,7 @@ namespace :analyze do
 #		else
 #			abort()
 #		end
-		puts "🔵  Counting lines of code..."
+		puts "🔵  Counting lines of code ..."
 	end
 	
 	
@@ -84,8 +84,8 @@ end
 
 
 
-def setup
-	puts "\n\n🔵  Build parameters and settings..."
+def setup_parameters
+	puts "\n\n🔵  Build parameters and settings ..."
 	puts "-----------------------------------"
 	
 	# Print current Xcode verion
@@ -116,15 +116,27 @@ def setup
 	configuration = `echo "$CONFIGURATION"`.strip
 	if !configuration.empty?; @configuration = configuration end
 	puts "🔸  [CONFIGURATION] \t\t" + @configuration + ""
+	
+	app_name = `echo "$APP_NAME"`.strip
+	if !app_name.empty?; @app_name = app_name end
+	puts "🔸  [APP_NAME] \t\t" + @app_name + ""
 end
 
 
 
-def clean_build_directory
-	puts "\n\n🔵  Cleaning build directory..."
+def setup_metadata
+	puts "\n\n🔵 Setting build metadata ..."
 	puts "-----------------------------------"
 	
-	# Clean build directory
-	`rm -rvf #{@build_directory}`
-	`mkdir -p #{@build_directory}`
+	if File.file?(@workspace + '/BuildMetadata.plist')
+		build_commit = `git log --pretty=format:'%H' -n 1`
+		puts "DVAGBuildCommit\t = #{build_commit}"
+		`/usr/libexec/PlistBuddy -c 'Set :DVAGBuildCommit #{build_commit}' #{@workspace}/BuildMetadata.plist`
+
+		# Date format must be like "Sun Dec 31 16:00:00 CET 2011"
+		`export LANG=en_US.UTF-8`
+		build_date = `date +'%a %b %d %H:%M:%S %Z %Y'`
+		puts "DVAGBuildTime\t = #{build_date}"
+		`/usr/libexec/PlistBuddy -c 'Set :DVAGBuildTime #{build_date}' #{@workspace}/BuildMetadata.plist`
+	end
 end
