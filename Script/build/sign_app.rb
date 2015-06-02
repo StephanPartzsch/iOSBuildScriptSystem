@@ -5,9 +5,9 @@ def sign_app
 	puts "-----------------------------------"
 	
 	# Create IPA
-	system( "xcrun	-sdk iphoneos \
+	system( "xcrun	-log \
+					-sdk iphoneos \
 					PackageApplication \
-					#{@build_directory_path}/#{@app_name}.app \
-					-o #{@build_directory_path}/#{@app_name}.ipa \
-					-v" )
+				 	#{@build_directory_path}/#{@app_name}.app \
+					-o #{@build_directory_path}/#{@app_name}.ipa " )
 end
