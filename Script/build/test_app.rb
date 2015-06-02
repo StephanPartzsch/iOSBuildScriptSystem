@@ -5,13 +5,14 @@ def test_app
 	puts "-----------------------------------"
 	
 	# Run unit test
-	system("xctool -project #{@workspace}/#{@project_name}.xcodeproj \
-			-scheme #{@scheme} \
-			-configuration Debug \
-			-sdk iphonesimulator \
-			-reporter pretty \
-			-reporter junit:#{@workspace}/report/test-report.xml \
-			test \
-			-freshSimulator \
-			-freshInstall")
+	system( "xctool -project #{@workspace}/#{@project_name}.xcodeproj \
+					-scheme #{@scheme} \
+					-configuration Debug \
+					-sdk iphonesimulator \
+					-reporter pretty \
+					-reporter junit:#{@workspace}/report/test-report.xml \
+					clean\
+					test \
+					-freshSimulator \
+					-freshInstall" )
 end

@@ -112,6 +112,10 @@ def setup
 	scheme = `echo "$SCHEME"`.strip
 	if !scheme.empty?; @scheme = scheme end
 	puts "🔸  [SCHEME] \t\t" + @scheme + ""
+	
+	configuration = `echo "$CONFIGURATION"`.strip
+	if !configuration.empty?; @configuration = configuration end
+	puts "🔸  [CONFIGURATION] \t\t" + @configuration + ""
 end
 
 

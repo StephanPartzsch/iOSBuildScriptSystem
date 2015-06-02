@@ -9,3 +9,4 @@
 
 @project_name = 'JenkinsTest'
 @scheme = 'JenkinsTest'
+@configuration = 'Release'

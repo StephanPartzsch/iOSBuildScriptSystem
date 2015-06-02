@@ -3,4 +3,13 @@
 def build_app
 	puts "\n\n🔵  Building app ..."
 	puts "-----------------------------------"
+	
+	# Build the app
+	system( "xctool -project #{@workspace}/#{@project_name}.xcodeproj \
+					-scheme #{@scheme} \
+					-sdk iphoneos \
+					-configuration #{@configuration} \
+					CONFIGURATION_BUILD_DIR=#{@build_directory} \
+					clean \
+					build" )
 end
