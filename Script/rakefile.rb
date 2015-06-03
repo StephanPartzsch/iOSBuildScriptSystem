@@ -95,7 +95,7 @@ def setup_parameters
 	puts "---"
 	
 	# Print build parameter
-	puts "➔  Overwrite the following parameters in Jenkins build job. Use the parameter name in [brackets]"
+	puts "➔  Overwrite the following parameters (🔸 ) in Jenkins build job. Use the parameter name in [brackets]"
 	puts "---"
 	
 	puts "🔹  Workspace \t\t\t" + @workspace
@@ -103,7 +103,7 @@ def setup_parameters
 	
 	build_directory_path = `echo "$BUILD_DIRECTORY_PATH"`.strip
 	if !build_directory_path.empty?; @build_directory_path = build_directory_path end
-	puts "🔸  [BUILD_DIRECTORY_PATH] \t" + @build_directory_path+ ""
+	puts "🔸  [BUILD_DIRECTORY_PATH] \t" + @build_directory_path + ""
 	
 	project_name = `echo "$PROJECT_NAME"`.strip
 	if !project_name.empty?; @project_name = project_name end
@@ -120,6 +120,18 @@ def setup_parameters
 	app_name = `echo "$APP_NAME"`.strip
 	if !app_name.empty?; @app_name = app_name end
 	puts "🔸  [APP_NAME] \t\t\t" + @app_name + ""
+	
+	source_directories = `echo "$SOURCE_DIRECTORIES"`.strip
+	if !source_directories.empty?; @source_directories = source_directories end
+	puts "🔸  [SOURCE_DIRECTORIES] \t" + @source_directories + ""
+	
+	user_defined_arguments = `echo "$USER_DEFINED_ARGUMENTS"`.strip
+	if !user_defined_arguments.empty?; @user_defined_arguments = user_defined_arguments end
+	puts "🔸  [USER_DEFINED_ARGUMENTS] \t" + @user_defined_arguments + ""
+	
+	preprocessor_macros = `echo "$PREPROCESSOR_MACROS"`.strip
+	if !preprocessor_macros.empty?; @preprocessor_macros = preprocessor_macros end
+	puts "🔸  [PREPROCESSOR_MACROS] \t" + @preprocessor_macros + ""
 end
 
 
