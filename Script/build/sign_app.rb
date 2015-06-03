@@ -8,6 +8,6 @@ def sign_app
 	system( "xcrun	-log \
 					-sdk iphoneos \
 					PackageApplication \
-				 	#{@build_directory_path}/#{@app_name}.app \
-					-o #{@build_directory_path}/#{@app_name}.ipa " )
+				 	#{@build_directory_path}/#{@file_name}.app \
+					-o #{@build_directory_path}/#{@file_name}.ipa " )
 end

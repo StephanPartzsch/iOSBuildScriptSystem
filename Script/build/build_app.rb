@@ -19,8 +19,8 @@ def build_app
 					-configuration #{@configuration} \
 					#{user_defaults_string} \
 					GCC_PREPROCESSOR_DEFINITIONS='#{@preprocessor_macros}' \
-					PRODUCT_NAME=#{@app_name} \
 					CONFIGURATION_BUILD_DIR=#{@build_directory_path} \
+					PRODUCT_NAME=#{@file_name} \
 					clean \
-					build" )
+					build ")
 end
