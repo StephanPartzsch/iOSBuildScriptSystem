@@ -12,7 +12,7 @@ require_relative 'build_settings/build_setting_02.rb'
 
 task :default do
 	Rake::application.options.show_tasks = :tasks
-	Rake::application.options.show_task_pattern = /^((?!build)(?!analyze).)*$/
+	Rake::application.options.show_task_pattern = /^((?!build:)(?!analyze:).)*$/
 	Rake::application.display_tasks_and_comments
 end
 

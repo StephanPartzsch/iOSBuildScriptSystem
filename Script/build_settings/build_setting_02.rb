@@ -30,18 +30,18 @@ namespace job_name do
 		@reports_directory_path 		= @workspace + '/reports'
 		@info_plist_path				= @workspace + '/JenkinsTest/Info.plist'
 
-		@project_name 					= 'JenkinsTest2'
-		@scheme 						= 'JenkinsTest2'
+		@project_name 					= 'JenkinsTest'
+		@scheme 						= 'JenkinsTest'
 		@configuration 					= 'Release'
 
 		@bundle_identifier				= 'de.sp.test.222'
 
-		@source_directories 			= 'JenkinsTest' 						# Separated by single space " "
+		@source_directories 			= @workspace + '/JenkinsTest' 			# Separated by single space " "
 
 		@user_defined_arguments 		= 'DV_DISPLAY_NAME=DVAG-DEV BLA=test'	# Separated by single space " "
 		@preprocessor_macros 			= 'COLOR_RED=1 OUTLINE=1'				# Separated by single space " "
 
-		@file_name						= @project_name
+		@file_name						= 'Hund'
 		@append_version_to_file_name	= false
 	end
 
