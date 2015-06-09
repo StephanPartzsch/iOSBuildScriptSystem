@@ -103,3 +103,9 @@ def get_app_version
 	app_version = `/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' #{@info_plist_path}`.strip
 	return app_version
 end
+
+def get_workspace_or_set_it_with_path(workspace_path)
+	workspace = `echo "$WORKSPACE"`.strip
+	if workspace.empty?; workspace = workspace_path end
+	return workspace
+end

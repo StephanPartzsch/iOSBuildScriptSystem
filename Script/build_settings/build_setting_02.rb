@@ -25,7 +25,8 @@ namespace job_name do
 	
 	desc "Set the default parameters for Job: " + job_name
 	task :set_default_parameters do
-		@workspace						= '/Users/jenkins/.jenkins/jobs/JenkinsTestJob/workspace'
+		@workspace						= get_workspace_or_set_it_with_path( '/Users/jenkins/.jenkins/jobs/JenkinsTestJob/workspace' )
+		
 		@build_directory_path 			= @workspace + '/build'
 		@reports_directory_path 		= @workspace + '/reports'
 		@info_plist_path				= @workspace + '/JenkinsTest/Info.plist'
