@@ -21,7 +21,10 @@ def setup_parameters
 	puts "➔  Overwrite the following parameters (🔸 ) in Jenkins build job. Use the parameter name in [brackets]"
 	puts "---"
 	
+	workspace = `echo "$WORKSPACE"`.strip
+	if !workspace.empty?; @workspace = workspace end
 	puts "🔹  Workspace \t\t\t\t" + @workspace
+	
 	puts "🔹  Reports directory path \t\t" + @reports_directory_path
 	
 	build_directory_path = `echo "$BUILD_DIRECTORY_PATH"`.strip

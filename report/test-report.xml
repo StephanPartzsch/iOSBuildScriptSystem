@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<testsuites name="AllTestUnits" tests="2" failures="0" errors="0" time="0.000486">
-    <testsuite tests="2" failures="0" errors="0" time="0.000486" timestamp="2015-06-01T12:22:17GMT+02:00" name="Toplevel Test Suite">
-        <testcase classname="JenkinsTestTests" name="testExample" time="0.000119"></testcase>
-        <testcase classname="JenkinsTestTests" name="testMath" time="0.000060"></testcase>
-    </testsuite>
-</testsuites>
