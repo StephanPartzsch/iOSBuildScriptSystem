@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 
+
 def count_lines
 	puts "\n\n🔵  Counting lines of code ..."
 	puts "-----------------------------------"

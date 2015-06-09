@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 
+
 def test_app
 	puts "\n\n🔵  Running tests ..."
 	puts "-----------------------------------"
