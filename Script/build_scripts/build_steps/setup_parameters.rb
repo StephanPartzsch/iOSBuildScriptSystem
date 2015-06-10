@@ -70,29 +70,31 @@ def setup_parameters
 		version_suffix = `echo "$VERSION_SUFFIX"`.strip
 		if !version_suffix.empty?; @version_suffix = version_suffix end
 		puts "🔸  [VERSION_SUFFIX] \t\t\t" + @version_suffix + ""
-		
-		@file_name = @file_name + @version_prefix + @app_version + @version_suffix
 	end
-	
-	puts "🔹  Final file name \t\t\t" + @file_name + ""
 	
 	puts ""
 
-	bundle_identifier = `echo "$BUNDLE_IDENTIFIER"`.strip
-	if !bundle_identifier.empty?; @bundle_identifier = bundle_identifier end
-	puts "🔸  [BUNDLE_IDENTIFIER] \t\t\t" + @bundle_identifier + ""
-	puts ""
+	if @bundle_identifier
+		bundle_identifier = `echo "$BUNDLE_IDENTIFIER"`.strip
+		if !bundle_identifier.empty?; @bundle_identifier = bundle_identifier end
+		puts "🔸  [BUNDLE_IDENTIFIER] \t\t\t" + @bundle_identifier + ""
+		puts ""
+	end
 	
 	source_directories = `echo "$SOURCE_DIRECTORIES"`.strip
 	if !source_directories.empty?; @source_directories = source_directories end
 	puts "🔸  [SOURCE_DIRECTORIES] \t\t" + @source_directories + ""
 	puts ""
 
-	user_defined_arguments = `echo "$USER_DEFINED_ARGUMENTS"`.strip
-	if !user_defined_arguments.empty?; @user_defined_arguments = user_defined_arguments end
-	puts "🔸  [USER_DEFINED_ARGUMENTS] \t\t" + @user_defined_arguments + ""
+	if @user_defined_arguments
+		user_defined_arguments = `echo "$USER_DEFINED_ARGUMENTS"`.strip
+		if !user_defined_arguments.empty?; @user_defined_arguments = user_defined_arguments end
+		puts "🔸  [USER_DEFINED_ARGUMENTS] \t\t" + @user_defined_arguments + ""
+	end
 	
-	preprocessor_macros = `echo "$PREPROCESSOR_MACROS"`.strip
-	if !preprocessor_macros.empty?; @preprocessor_macros = preprocessor_macros end
-	puts "🔸  [PREPROCESSOR_MACROS] \t\t" + @preprocessor_macros + ""
+	if @preprocessor_macros
+		preprocessor_macros = `echo "$PREPROCESSOR_MACROS"`.strip
+		if !preprocessor_macros.empty?; @preprocessor_macros = preprocessor_macros end
+		puts "🔸  [PREPROCESSOR_MACROS] \t\t" + @preprocessor_macros + ""
+	end
 end

@@ -4,9 +4,8 @@ Rake::TaskManager.record_task_metadata = true
 
 
 
-require_relative 'build_settings/build_setting_01.rb'
-require_relative 'build_settings/build_setting_02.rb'
-
+# imports all ruby files in build_settings
+Dir.glob('**/build_settings/*.rb').each { |r| require_relative r}
 
 
 
