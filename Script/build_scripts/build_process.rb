@@ -3,6 +3,7 @@
 
 require_relative 'build_steps/setup_parameters.rb'
 require_relative 'build_steps/set_plist_values.rb'
+require_relative 'build_steps/clean_build_directory.rb'
 require_relative 'build_steps/test_app.rb'
 require_relative 'build_steps/build_app.rb'
 require_relative 'build_steps/sign_app.rb'
@@ -23,7 +24,7 @@ namespace :build do
 	
 	desc "Prepares and logs neccessary build parameters (set/overwrite)"
 	task :setup_parameters do
-		setup_parameters 
+		setup_parameters
 	end
 	
 	desc "Sets up info-plist values"
@@ -31,6 +32,11 @@ namespace :build do
 		set_plist_values
 	end
 
+	desc "Deletes the whole build directory."
+	task :clean_build_directory do
+		clean_build_directory 
+	end
+	
 	desc "Runs all tests of the defined project's scheme"
 	task :test do
 		test_app
@@ -53,9 +59,9 @@ namespace :build do
 	
 	desc "Runs the whole build prozess (setup|clean|test|build|sign|distribute)"
 	task :ALL do
-	
 		Rake::Task["build:setup_parameters"].invoke
 		Rake::Task["build:set_plist_values"].invoke
+		Rake::Task["build:clean_build_directory"].invoke
 		Rake::Task["build:test"].invoke
 		Rake::Task["build:build"].invoke
 		Rake::Task["build:sign"].invoke
