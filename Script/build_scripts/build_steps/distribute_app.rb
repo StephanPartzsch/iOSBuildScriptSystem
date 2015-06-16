@@ -5,17 +5,9 @@ def distribute_app
 	puts "\n\n🔵  Distributing app ..."
 	puts "-----------------------------------"
 	
-
-	final_file_name = @file_name
-	if @append_version_to_file_name
-		final_file_name = @file_name + @version_prefix + @app_version + @version_suffix
-	end
-	puts "📄  Final file name: " + final_file_name + "\n\n"
-	
-	
+	final_file_name = get_final_file_name
 	dsym_file = Dir.glob("#{@build_directory_path}/*.dSYM").first
 	
-
 	# Zip dsym for distribution
 	puts "Creates zipped dSYM file #{@build_directory_path}/#{final_file_name}.dSYM.zip" 
 	`zip -r #{@build_directory_path}/#{final_file_name}.dSYM.zip #{dsym_file}`

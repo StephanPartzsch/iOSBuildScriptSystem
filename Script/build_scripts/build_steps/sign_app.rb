@@ -5,14 +5,7 @@ def sign_app
 	puts "\n\n🔵  Signing app ..."
 	puts "-----------------------------------"
 	
-	
-	final_file_name = @file_name
-	if @append_version_to_file_name
-		final_file_name = @file_name + @version_prefix + @app_version + @version_suffix
-	end
-	puts "📄  Final file name: " + final_file_name + "\n\n"
-	
-	
+	final_file_name = get_final_file_name
 	app_file = Dir.glob("#{@build_directory_path}/*.app").first
 	
 	# Create IPA

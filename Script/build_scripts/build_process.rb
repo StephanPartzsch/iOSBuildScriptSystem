@@ -109,3 +109,15 @@ def get_workspace_or_set_it_with_path(workspace_path)
 	if workspace.empty?; workspace = workspace_path end
 	return workspace
 end
+
+def get_final_file_name
+	final_file_name = @file_name
+	
+	if @append_version_to_file_name
+		final_file_name += @version_prefix + @app_version + @version_suffix
+	end
+	
+	puts "📄  Final file name: " + final_file_name + "\n\n"
+	
+	return final_file_name
+end
