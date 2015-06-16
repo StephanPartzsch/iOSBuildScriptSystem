@@ -25,24 +25,24 @@ namespace job_name do
 	
 	desc "Set the default parameters for Job: " + job_name
 	task :set_default_parameters do	
-		@workspace						= get_workspace_or_set_it_with_path( '/Users/jenkins/.jenkins/jobs/JenkinsTest_Ruby/workspace' )
+		@workspace						= get_workspace_or_set_it_with_path( '[PATH_TO_WHERE_THE_PROJECT_LIVES]' ) # Full qualified
 		
 		@build_directory_path 			= @workspace + '/build'
 		@reports_directory_path 		= @workspace + '/reports'
-		@info_plist_path				= @workspace + '/JenkinsTest/Info.plist'
+		@info_plist_path				= @workspace + '/iOSBuildScriptSystemExample/Info.plist'
 
-		@project_name 					= 'JenkinsTest'
-		@scheme 						= 'JenkinsTest'
-		@configuration 					= 'Release'
+		@project_name 					= 'iOSBuildScriptSystemExample'
+		@scheme 						= 'iOSBuildScriptSystemExample'
+		@configuration 					= 'Debug'
 
-		@bundle_identifier				= 'de.sp.test.neo2015'
+		@bundle_identifier				= 'de.sp.test.bse'
 
-		@source_directories 			= @workspace + '/JenkinsTest' 			# Separated by single space " "
+		@source_directories 			= @workspace + '/iOSBuildScriptSystemExample' 			# Separated by single space " "
 
-		@user_defined_arguments 		= 'DV_DISPLAY_NAME=DVAG-DEV BLA=test'	# Separated by single space " "
-		@preprocessor_macros 			= 'COLOR_RED=1 OUTLINE=1'				# Separated by single space " "
+		@user_defined_arguments 		= 'BLA=1 DV_DISPLAY_NAME="iOS BSE"'						# Separated by single space " "
+		@preprocessor_macros 			= 'COLOR_RED=1 OUTLINE=1'								# Separated by single space " "
 
-		@file_name						= 'JR'
+		@file_name						= 'iOS_BSE'
 		@append_version_to_file_name	= true
 		@version_prefix					= '-V'
 		@app_version					= get_app_version
@@ -61,14 +61,14 @@ namespace job_name do
 		
 		if File.file?(@workspace + '/BuildMetadata.plist')
 			build_commit = `git log --pretty=format:'%H' -n 1`
-			puts "DVAGBuildCommit\t\t = #{build_commit}"
-			`/usr/libexec/PlistBuddy -c 'Set :DVAGBuildCommit #{build_commit}' #{@workspace}/BuildMetadata.plist`
+			puts "BuildCommit\t\t = #{build_commit}"
+			`/usr/libexec/PlistBuddy -c 'Set :BuildCommit #{build_commit}' #{@workspace}/iOSBuildScriptSystemExample/BuildMetadata.plist`
 
 			# Date format must be like "Sun Dec 31 16:00:00 CET 2011"
 			`export LANG=en_US.UTF-8`
 			build_date = `date +'%a %b %d %H:%M:%S %Z %Y'`
-			puts "DVAGBuildTime\t\t = #{build_date}"
-			`/usr/libexec/PlistBuddy -c 'Set :DVAGBuildTime #{build_date}' #{@workspace}/BuildMetadata.plist`
+			puts "BuildTime\t\t = #{build_date}"
+			`/usr/libexec/PlistBuddy -c 'Set :BuildTime #{build_date}' #{@workspace}/iOSBuildScriptSystemExample/BuildMetadata.plist`
 		end
 	end
 	
