@@ -39,7 +39,7 @@ namespace job_name do
 
 		@source_directories 			= @workspace + '/JenkinsTest' 			# Separated by single space " "
 
-		@user_defined_arguments 		= 'DV_DISPLAY_NAME=DVAG-DEV BLA=test'	# Separated by single space " "
+		@user_defined_arguments 		= 'BLA=1 DV_DISPLAY_NAME="11 01"'	# Separated by single space " "
 		@preprocessor_macros 			= 'COLOR_RED=1 OUTLINE=1'				# Separated by single space " "
 
 		@file_name						= 'Hund'
