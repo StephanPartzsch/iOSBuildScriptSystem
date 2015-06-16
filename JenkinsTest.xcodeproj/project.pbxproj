@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C2F244B1B0636BF00D05F56 /* XCTestCase+GCovFlush.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F244A1B0636BF00D05F56 /* XCTestCase+GCovFlush.m */; };
 		4C3F2B081B00D5A3003DCF92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F2B071B00D5A3003DCF92 /* main.m */; };
 		4C3F2B0B1B00D5A3003DCF92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F2B0A1B00D5A3003DCF92 /* AppDelegate.m */; };
 		4C3F2B0E1B00D5A3003DCF92 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F2B0D1B00D5A3003DCF92 /* ViewController.m */; };
@@ -29,7 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C2F244A1B0636BF00D05F56 /* XCTestCase+GCovFlush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+GCovFlush.m"; sourceTree = "<group>"; };
 		4C3F2B021B00D5A3003DCF92 /* JenkinsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JenkinsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3F2B061B00D5A3003DCF92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C3F2B071B00D5A3003DCF92 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 			children = (
 				4C3F2B211B00D5A3003DCF92 /* JenkinsTestTests.m */,
 				4C3F2B1F1B00D5A3003DCF92 /* Supporting Files */,
-				4C2F244A1B0636BF00D05F56 /* XCTestCase+GCovFlush.m */,
 			);
 			path = JenkinsTestTests;
 			sourceTree = "<group>";
@@ -228,7 +225,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C2F244B1B0636BF00D05F56 /* XCTestCase+GCovFlush.m in Sources */,
 				4C3F2B0E1B00D5A3003DCF92 /* ViewController.m in Sources */,
 				4C46572A1B175EC200A60DE7 /* SecondRect.m in Sources */,
 				4C3F2B0B1B00D5A3003DCF92 /* AppDelegate.m in Sources */,
