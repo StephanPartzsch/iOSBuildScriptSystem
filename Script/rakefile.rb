@@ -4,11 +4,12 @@ Rake::TaskManager.record_task_metadata = true
 
 
 
-# imports all ruby files in build_settings
+# Imports all ruby files in build_settings
 Dir.glob('**/build_settings/*.rb').each { |r| require_relative r}
 
 
 
+# Defines which rake tasks should show up when called via default rake task 
 task :default do
 	Rake::application.options.show_tasks = :tasks
 	Rake::application.options.show_task_pattern = /^((?!build:)(?!analyze:).)*$/

@@ -2,7 +2,7 @@
 
 
 ##
-# This file contains all standard build parameters
+# This file contains all default build parameters
 # and defines overall build steps.
 ##
 
@@ -10,9 +10,9 @@ require_relative '../build_scripts/build_process.rb'
 
 
 
-#######################
-# SET THIS VALUE
-#######################
+######################################
+# SET THIS VALUE to group rake tasks #
+######################################
 job_name = 'setting_02'
 
 
