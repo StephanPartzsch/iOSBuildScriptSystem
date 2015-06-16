@@ -62,10 +62,10 @@ namespace :build do
 		Rake::Task["build:setup_parameters"].invoke
 		Rake::Task["build:set_plist_values"].invoke
 		Rake::Task["build:clean_build_directory"].invoke
-#		Rake::Task["build:test"].invoke
+		Rake::Task["build:test"].invoke
 		Rake::Task["build:build"].invoke
 		Rake::Task["build:sign"].invoke
-#		Rake::Task["build:distribute"].invoke
+		Rake::Task["build:distribute"].invoke
 
 		puts "\n\n✅  Everything done!"
 		puts "==================================="
