@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A697884E1B319C8800BF1126 /* SecondRectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A697884D1B319C8800BF1126 /* SecondRectTest.m */; };
 		A6A4E6D31B307341006928CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A4E6D21B307341006928CA /* main.m */; };
 		A6A4E6D61B307341006928CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A4E6D51B307341006928CA /* AppDelegate.m */; };
 		A6A4E6D91B307341006928CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A4E6D81B307341006928CA /* ViewController.m */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A697884D1B319C8800BF1126 /* SecondRectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondRectTest.m; sourceTree = "<group>"; };
 		A6A4E6CD1B307341006928CA /* iOSBuildScriptSystemExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSBuildScriptSystemExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A4E6D11B307341006928CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6A4E6D21B307341006928CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				A6A4E6EC1B307342006928CA /* iOSBuildScriptSystemExampleTests.m */,
+				A697884D1B319C8800BF1126 /* SecondRectTest.m */,
 				A6A4E6EA1B307342006928CA /* Supporting Files */,
 			);
 			path = iOSBuildScriptSystemExampleTests;
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6A4E6ED1B307342006928CA /* iOSBuildScriptSystemExampleTests.m in Sources */,
+				A697884E1B319C8800BF1126 /* SecondRectTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
