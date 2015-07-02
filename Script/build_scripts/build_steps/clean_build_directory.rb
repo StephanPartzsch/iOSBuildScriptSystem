@@ -8,7 +8,7 @@ def clean_build_directory
 	`rm -rv #{@build_directory_path}`
 	was_directory_deleted=$?.success?
 		
-	if(was_directory_deleted)
+	if was_directory_deleted
 		puts "Build directory deleted: " + @build_directory_path
 	end
 end

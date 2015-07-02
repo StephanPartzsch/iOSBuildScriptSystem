@@ -2,7 +2,7 @@
 
 
 def set_plist_values
-	if !@bundle_identifier; return end
+	unless @bundle_identifier; return end
 	
 	puts "\n\n🔵  Setting info-plist values ..."
 	puts "-----------------------------------"

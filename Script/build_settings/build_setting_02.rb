@@ -25,24 +25,24 @@ namespace job_name do
 	
 	desc "Set the default parameters for Job: " + job_name
 	task :set_default_parameters do
-		@workspace						= get_workspace_or_set_it_with_path( '[PATH_TO_WHERE_THE_PROJECT_LIVES]' ) # Full qualified
+		@workspace									= get_workspace_or_set_with_path( '[PATH_TO_WHERE_THE_PROJECT_LIVES]' ) # Full qualified
 		
 		@build_directory_path 			= @workspace + '/build'
 		@reports_directory_path 		= @workspace + '/reports'
-		@info_plist_path				= @workspace + '/iOSBuildScriptSystemExample/Info.plist'
+		@info_plist_path						= @workspace + '/iOSBuildScriptSystemExample/Info.plist'
 
-		@project_name 					= 'iOSBuildScriptSystemExample'
-		@scheme 						= 'iOSBuildScriptSystemExample'
-		@configuration 					= 'Debug'
+		@project_name 							= 'iOSBuildScriptSystemExample'
+		@scheme 										= 'iOSBuildScriptSystemExample'
+		@configuration 							= 'Debug'
 
-		@bundle_identifier				= 'de.sp.test.bse'
+		@bundle_identifier					= 'de.sp.test.bse'
 
-		@source_directories 			= @workspace + '/iOSBuildScriptSystemExample' 			# Separated by single space " "
+		@source_directories 				= @workspace + '/iOSBuildScriptSystemExample' 			# Separated by single space " "
 
 		@user_defined_arguments 		= 'BLA=1 DV_DISPLAY_NAME="iOS BSE"'						# Separated by single space " "
-		@preprocessor_macros 			= 'COLOR_RED=1 OUTLINE=1'								# Separated by single space " "
+		@preprocessor_macros 				= 'COLOR_RED=1 OUTLINE=1'								# Separated by single space " "
 
-		@file_name						= 'iOS_BSE'
+		@file_name										= 'iOS_BSE'
 		@append_version_to_file_name	= false
 	end
 

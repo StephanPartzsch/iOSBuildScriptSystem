@@ -22,7 +22,7 @@ require_relative 'helper.rb'
 
 namespace :build do
 	
-	desc "Prepares and logs neccessary build parameters (set/overwrite)"
+	desc "Prepares and logs necessary build parameters (set/overwrite)"
 	task :setup_parameters do
 		setup_parameters
 	end
@@ -52,12 +52,12 @@ namespace :build do
 		sign_app
 	end
 	
-	desc "Distributes the app to Tankstelle and S3 server"	
+	desc "Distributes the app"
 	task :distribute do
 		distribute_app
 	end
 	
-	desc "Runs the whole build prozess (setup|clean|test|build|sign|distribute)"
+	desc "Runs the whole build process"
 	task :ALL do
 		Rake::Task["build:setup_parameters"].invoke
 		Rake::Task["build:set_plist_values"].invoke
